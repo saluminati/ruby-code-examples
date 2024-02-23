@@ -3,9 +3,11 @@ require 'faker'
 
 emails = []
 
-1000.times do |item|
-  temp = Faker::Internet.email
-  emails.push(temp)
+100.times do |item|
+    temp = Faker::Internet.email
+    emails.push(temp)
 end
 
-puts emails
+File.open('emails.txt', 'w') do |f|
+  f.puts(emails)
+end
